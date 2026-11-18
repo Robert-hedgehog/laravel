@@ -2,24 +2,26 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Category;
+use App\Models\Tag;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    use WithoutModelEvents;
-
-    /**
-     * Seed the application's database.
-     */
     public function run(): void
     {
-        // User::factory(10)->create();
+        $categories = [
+            ['name' => 'Вопрос', 'slug' => 'question'],
+            ['name' => 'Ошибка', 'slug' => 'bug'],
+            ['name' => 'Предложение', 'slug' => 'feature'],
+        ];
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        foreach ($categories as $category) {
+            Category::firstOrCreate(['slug' => $category['slug']], $category);
+        }
+
+        foreach (['Ответить позже', 'Нужна проверка', 'Дубль'] as $tagName) {
+            Tag::firstOrCreate(['name' => $tagName]);
+        }
     }
 }

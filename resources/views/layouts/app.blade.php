@@ -225,6 +225,47 @@
             font-size: 13px;
             color: #6b7280;
         }
+
+        .badge { 
+            display: inline-block;
+            padding: 2px 8px; 
+            border-radius: 4px; 
+            font-size: 11px; 
+            background: #e5e7eb; 
+            color: #374151; 
+            margin-right: 4px;
+            margin-bottom: 3px;
+        }
+        
+        .badge-important { 
+            background: #fee2e2; 
+            color: #991b1b; 
+        }
+
+        .btn-sm { 
+            padding: 4px 10px; 
+            font-size: 12px; 
+        }
+        .btn-danger { 
+            background: #dc2626; 
+            color: #ffffff; 
+        }
+        .btn-danger:hover {
+            background: #b91c1c; 
+        }
+        .filters { 
+            display: flex; 
+            gap: 10px; 
+            flex-wrap: wrap; 
+            align-items: center; 
+            margin-bottom: 15px; 
+        }
+        .filters select { 
+            padding: 6px 10px; 
+            border: 1px solid #d1d5db; 
+            border-radius: 6px; 
+            font-size: 14px; 
+        }
     </style>
 </head>
 <body>
